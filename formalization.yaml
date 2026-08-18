@@ -1,0 +1,91 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Jacobian Conjecture Disproof Comparator formalization"
+  authors: ["Paul Lezeau", "Dean Cureton", "Moritz Firsching", "Junyan Xu"]
+  responsible_maintainers: ["Paul Lezeau"]
+  license: "Apache-2.0"
+
+repository:
+  role: "thin-wrapper"
+  substantive_formalization:
+    id: "https://github.com/google-deepmind/formal-conjectures"
+    revision: "9943b0a06a1c311a68c31193460896694f77bd7a"
+
+sources:
+  - title: "Hello there the Jacobian conjecture is false"
+    authors: ["Levent Alpöge"]
+    id: "https://x.com/__alpoge__/status/2079028340955197566"
+    type: "web post"
+    location: "explicit three-variable polynomial counterexample"
+    relationship: "adapts"
+  - title: "Jacobian conjecture"
+    authors: ["Wikipedia contributors"]
+    id: "https://en.wikipedia.org/wiki/Jacobian_conjecture"
+    type: "encyclopedia article"
+    relationship: "background"
+
+classification:
+  arxiv: ["math.AG", "math.AC"]
+  msc2020: ["14R15"]
+
+status:
+  scope: >-
+    Repackages the formal-conjectures disproof of the generalized Jacobian
+    conjecture using an explicit determinant-one polynomial self-map in three
+    variables, with a Comparator challenge and verified solution.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+  main_results:
+    - declaration: "JacobianConjecture.jacobian_conjecture"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Quot.sound", "Classical.choice"]
+      comparator_config: "config.json"
+      literature_dependencies: []
+
+automation:
+  methods:
+    - method: "manual"
+      framework: "Lean 4 and Mathlib"
+      tool_setup: >-
+        The substantive proof was authored and reviewed in formal-conjectures
+        pull requests #4474 and #4635.
+    - method: "agent"
+      models: ["gpt-5"]
+      framework: "OpenAI Codex"
+      tool_setup: >-
+        Codex adapted the source into a standalone Mathlib project, added
+        Comparator CI and registry metadata, and ran the build and trust checks.
+      cost:
+        wall_time: "One interactive session on 18 August 2026."
+        spend_usd: "Subscription-based usage; exact spend was not recorded."
+        hardware: "API-backed model and local Lean builds."
+  spend_usd: "Subscription-based usage; exact spend was not recorded."
+  notes: >-
+    The mathematical proof remains the formal-conjectures development; the
+    agent work in this repository is packaging and verification.
+
+fidelity:
+  divergences: >-
+    The formal-conjectures syntax `answer(False)` elaborates to an annotated
+    `False`; this standalone wrapper writes `False` directly. Repository-only
+    attributes, the determinant-minus-two presentation, the open two-variable
+    case, and API tests are omitted. Statement dependencies live in the shared
+    trusted `Jacobian.lean` module. The checked theorem and its determinant-one
+    counterexample preserve the substantive generalized disproof.
+
+review:
+  status: "peer-reviewed"
+  reviewers: ["bkim23", "mo271", "alreadydone", "OpenAI Codex (gpt-5)"]
+  notes: >-
+    The source proof was approved through formal-conjectures pull request
+    reviews; this wrapper was separately checked by building both modules,
+    inspecting axioms and sorries, and running Comparator.
+
+acknowledgements: >-
+  The counterexample was announced by Levent Alpöge, crediting Akhil Mathew
+  and Claude Fable 5. This wrapper uses Lean, Mathlib, formal-conjectures, and
+  leanprover/comparator.
