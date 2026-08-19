@@ -3,6 +3,12 @@ version: "v0.4"
 
 project:
   name: "Jacobian Conjecture Disproof Comparator formalization"
+  description: >-
+    A self-contained version of the formal-conjectures formalization by Paul
+    Lezeau and Dean Cureton. It disproves the generalized Jacobian conjecture
+    over every nontrivial commutative ring using an explicit determinant-one
+    polynomial self-map in three variables. The formal-conjectures formalisation
+    remains the reference statement.
   authors: ["Paul Lezeau", "Dean Cureton"]
   responsible_maintainers: ["Paul Lezeau"]
   license: "Apache-2.0"
@@ -53,8 +59,8 @@ automation:
       tool_setup: >-
         The substantive proof was authored and reviewed in formal-conjectures
         pull requests #4474 and #4635. Most of the work was done manually, with
-        some assistance from an Codex in an original proof step that was eventually
-        rewritten by hand.
+        some assistance from Codex on one proof step that was eventually rewritten
+        by hand.
     - method: "agent"
       models: ["gpt-5"]
       framework: "OpenAI Codex"
@@ -62,7 +68,7 @@ automation:
         Codex adapted the source into a standalone Mathlib project, added
         Comparator CI and registry metadata, and ran the build and trust checks.
       cost:
-        wall_time: "One interactive session on 18 August 2026."
+        wall_time: "Several short interactive sessions on 18-19 August 2026."
         spend_usd: "Subscription-based usage; exact spend was not recorded."
         hardware: "API-backed model and local Lean builds."
   spend_usd: "Subscription-based usage; exact spend was not recorded."
