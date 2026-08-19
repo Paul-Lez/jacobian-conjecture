@@ -3,7 +3,7 @@ version: "v0.4"
 
 project:
   name: "Jacobian Conjecture Disproof Comparator formalization"
-  authors: ["Paul Lezeau", "Dean Cureton", "Moritz Firsching", "Junyan Xu"]
+  authors: ["Paul Lezeau", "Dean Cureton"]
   responsible_maintainers: ["Paul Lezeau"]
   license: "Apache-2.0"
 
@@ -52,7 +52,9 @@ automation:
       framework: "Lean 4 and Mathlib"
       tool_setup: >-
         The substantive proof was authored and reviewed in formal-conjectures
-        pull requests #4474 and #4635.
+        pull requests #4474 and #4635. Most of the work was done manually, with
+        some assistance from an Codex in an original proof step that was eventually
+        rewritten by hand.
     - method: "agent"
       models: ["gpt-5"]
       framework: "OpenAI Codex"
@@ -80,7 +82,7 @@ fidelity:
 
 review:
   status: "peer-reviewed"
-  reviewers: ["bkim23", "mo271", "alreadydone", "OpenAI Codex (gpt-5)"]
+  reviewers: ["bkim23", "mo271", "alreadydone", "OpenAI Codex (gpt-5)", "kbuzzard"]
   notes: >-
     The source proof was approved through formal-conjectures pull request
     reviews; this wrapper was separately checked by building both modules,
