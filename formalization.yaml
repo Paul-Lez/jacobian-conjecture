@@ -73,9 +73,10 @@ fidelity:
     The formal-conjectures syntax `answer(False)` elaborates to an annotated
     `False`; this standalone wrapper writes `False` directly. Repository-only
     attributes, the determinant-minus-two presentation, the open two-variable
-    case, and API tests are omitted. Statement dependencies live in the shared
-    trusted `Jacobian.lean` module. The checked theorem and its determinant-one
-    counterexample preserve the substantive generalized disproof.
+    case, and API tests are omitted. The challenge and solution each include
+    their statement dependencies directly so that they import Mathlib only.
+    The checked theorem and its determinant-one counterexample preserve the
+    substantive generalized disproof.
 
 review:
   status: "peer-reviewed"
