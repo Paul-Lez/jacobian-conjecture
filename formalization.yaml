@@ -31,6 +31,10 @@ sources:
     id: "https://en.wikipedia.org/wiki/Jacobian_conjecture"
     type: "encyclopedia article"
     relationship: "background"
+  - title: "A digestion of the Jacobian conjecture counterexample"
+    authors: ["Terrence Tao"]
+    id: "https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/"
+    type: "blog post"
 
 classification:
   arxiv: ["math.AG", "math.AC"]
