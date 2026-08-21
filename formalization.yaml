@@ -26,16 +26,19 @@ sources:
     type: "web post"
     location: "explicit three-variable polynomial counterexample"
     relationship: "adapts"
+    role: "The original blog post on X sharing a (short) counterexample to the conjecture."
   - title: "Jacobian conjecture"
     authors: ["Wikipedia contributors"]
     id: "https://en.wikipedia.org/wiki/Jacobian_conjecture"
     type: "encyclopedia article"
     relationship: "background"
+    role: "Overview of the conjecture, including various of the counterexamples found since the original post by Levent Alpöge."
   - title: "A digestion of the Jacobian conjecture counterexample"
     authors: ["Terrence Tao"]
     id: "https://terrytao.wordpress.com/2026/07/21/a-digestion-of-the-jacobian-conjecture-counterexample/"
     type: "blog post"
-
+    relationship: "background"
+    role: "A careful account and digestion of a counterexample."
 classification:
   arxiv: ["math.AG", "math.AC"]
   msc2020: ["14R15"]
