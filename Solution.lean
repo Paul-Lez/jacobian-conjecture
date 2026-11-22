@@ -22,7 +22,7 @@ noncomputable def Jacobian (F : RegularFunction k σ τ) :
 noncomputable def comp
     (F : RegularFunction k σ τ) (G : RegularFunction k τ ι) :
     RegularFunction k σ ι :=
-  fun i => MvPolynomial.bind₁ F (G i)
+  fun i => MvPolynomial.aeval F (G i)
 
 variable (k σ) in
 noncomputable def id : RegularFunction k σ σ := MvPolynomial.X
@@ -54,7 +54,7 @@ lemma comp_aeval
     (F : RegularFunction k σ τ) (G : RegularFunction k τ ι)
     (a : σ → k) : (F.comp G).aeval a = G.aeval (F.aeval a) := by
   ext i
-  rw [aeval, comp, MvPolynomial.aeval_bind₁, ← aeval]
+  rw [aeval, comp, MvPolynomial.comp_aeval_apply, ← aeval]
   rfl
 
 end RegularFunction

@@ -5,7 +5,7 @@ defaultTargets = ["Challenge", "Solution"]
 [[require]]
 name = "mathlib"
 scope = "leanprover-community"
-rev = "f385f9fd18abed332ebcd3df239cb357e264aceb"
+rev = "31ce06eaadf4a200c0e1407c5f10953cf606b8f8"
 
 [[lean_lib]]
 name = "Challenge"
